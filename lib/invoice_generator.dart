@@ -6,6 +6,7 @@ import 'package:invoice_generator/models/barcode_model.dart';
 import 'package:invoice_generator/models/email_model.dart';
 import 'package:invoice_generator/models/fnb_invoice_model.dart';
 import 'package:invoice_generator/models/pdf_settings.dart';
+import 'package:invoice_generator/templates/barcode_template/barcode_template_second.dart';
 import 'package:invoice_generator/templates/email_template/email_template.dart';
 import 'package:invoice_generator/templates/fbn_invoice_template/fbn_invoice_template.dart';
 import 'package:invoice_generator/templates/qr_generator/qr_generator.dart';
@@ -92,6 +93,15 @@ class PrintGenerator {
     }
 
     final pdf = await BarcodeTemplate(data: data).getBarcodePdf();
+    return pdf.save();
+  }
+
+  Future<Uint8List> generateEBarcodeSecond(BarcodeModel data) async {
+    if (!Barcode.ean13().isValid(data.barCode)) {
+      throw Exception('Barcode should be in EAN13 format');
+    }
+
+    final pdf = await BarcodeTemplateSecond(data: data).getBarcodePdf();
     return pdf.save();
   }
 
@@ -186,7 +196,7 @@ class PrintGenerator {
       companyPhoneNo: companyPhoneNo,
       mergeTableList: mergeTableList,
       paymentStatus: paymentStatus,
-      customerGst: customerGst ,
+      customerGst: customerGst,
       roundOffValue: roundOffValue,
       qrcode: qrcode,
       noOfPerson: noOfPerson,

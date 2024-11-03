@@ -3,6 +3,7 @@ import 'package:invoice_generator_example/examples/barcode_example.dart';
 import 'package:invoice_generator_example/examples/fnb_invoice_example.dart';
 import 'package:invoice_generator_example/examples/invoice_example.dart';
 import 'package:invoice_generator_example/examples/journal_example.dart';
+import 'package:invoice_generator_example/examples/jwellery_barcode_example.dart';
 import 'package:invoice_generator_example/examples/qr_generator.dart';
 import 'package:invoice_generator_example/examples/receipt_example.dart';
 import 'package:invoice_generator_example/examples/tax_invoice_2.dart';
@@ -39,6 +40,8 @@ class _MyAppState extends State<MyApp> {
         JournalExample.routeName: (context) => const JournalExample(),
         ReceiptExample.routeName: (context) => const ReceiptExample(),
         BarcodeExample.routeName: (context) => const BarcodeExample(),
+        BarcodeExampleSecond.routeName: (context) =>
+            const BarcodeExampleSecond(),
         TaxInvoiceExample.routeName: (context) => const TaxInvoiceExample(),
         TaxInvoiceExample2.routeName: (context) => const TaxInvoiceExample2(),
         TaxInvoiceExample3.routeName: (context) => const TaxInvoiceExample3(),
@@ -178,6 +181,15 @@ class HomeWidget extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.all(20),
                   child: Text("Barcode Invoice"),
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, BarcodeExampleSecond.routeName);
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Text("Barcode  2"),
                 ),
               ),
               MaterialButton(

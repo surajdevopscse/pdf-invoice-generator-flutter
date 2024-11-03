@@ -8,6 +8,9 @@ class BarcodeModel {
   final bool showNumber;
   final bool? taxInclusive;
   final String? itemName;
+  final String? itemCode;
+  final String? weight;
+  final String? goldPurity;
   final String? ingredients;
   final String? price;
   final String? netQyt;
@@ -24,6 +27,9 @@ class BarcodeModel {
 
   BarcodeModel(
       {this.itemName,
+      this.itemCode,
+      this.goldPurity,
+      this.weight,
       required this.barCode,
       this.count = 2,
       this.width = 54,
