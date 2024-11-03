@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_generator_example/examples/barcode_example.dart';
+import 'package:invoice_generator_example/examples/barcode_example_second.dart';
 import 'package:invoice_generator_example/examples/fnb_invoice_example.dart';
 import 'package:invoice_generator_example/examples/invoice_example.dart';
 import 'package:invoice_generator_example/examples/journal_example.dart';
-import 'package:invoice_generator_example/examples/jwellery_barcode_example.dart';
 import 'package:invoice_generator_example/examples/qr_generator.dart';
 import 'package:invoice_generator_example/examples/receipt_example.dart';
 import 'package:invoice_generator_example/examples/tax_invoice_2.dart';

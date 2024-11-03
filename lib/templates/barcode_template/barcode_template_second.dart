@@ -27,24 +27,33 @@ class BarcodeTemplateSecond {
   PdfColor valueColor = PdfColors.grey100;
   PdfColor labelColor = PdfColors.grey500;
 
+  // setFontFamily(String fontFamily) async {
+  //   if (fontFamily == 'Poppins') {
+  //     titleFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     subTitleFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     invoiceNumberFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     invoiceDateFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     valuesFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     labelFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //     extraBoldFont = await PdfGoogleFonts.mochiyPopPOneRegular();
+  //   } else {
+  //     titleFont = await PdfGoogleFonts.mulishRegular();
+  //     invoiceNumberFont = await PdfGoogleFonts.mulishRegular();
+  //     subTitleFont = await PdfGoogleFonts.mulishRegular();
+  //     invoiceDateFont = await PdfGoogleFonts.mulishRegular();
+  //     valuesFont = await PdfGoogleFonts.mulishRegular();
+  //     labelFont = await PdfGoogleFonts.mulishRegular();
+  //     extraBoldFont = await PdfGoogleFonts.mulishRegular();
+  //   }
+  // }
   setFontFamily(String fontFamily) async {
-    if (fontFamily == 'Poppins') {
-      titleFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      subTitleFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      invoiceNumberFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      invoiceDateFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      valuesFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      labelFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-      extraBoldFont = await PdfGoogleFonts.mochiyPopPOneRegular();
-    } else {
-      titleFont = await PdfGoogleFonts.mulishRegular();
-      invoiceNumberFont = await PdfGoogleFonts.mulishRegular();
-      subTitleFont = await PdfGoogleFonts.mulishRegular();
-      invoiceDateFont = await PdfGoogleFonts.mulishRegular();
-      valuesFont = await PdfGoogleFonts.mulishRegular();
-      labelFont = await PdfGoogleFonts.mulishRegular();
-      extraBoldFont = await PdfGoogleFonts.mulishRegular();
-    }
+    titleFont = await PdfGoogleFonts.robotoRegular();
+    subTitleFont = await PdfGoogleFonts.robotoRegular();
+    invoiceNumberFont = await PdfGoogleFonts.robotoRegular();
+    invoiceDateFont = await PdfGoogleFonts.robotoRegular();
+    valuesFont = await PdfGoogleFonts.robotoRegular();
+    labelFont = await PdfGoogleFonts.robotoRegular();
+    extraBoldFont = await PdfGoogleFonts.robotoRegular();
   }
 
   setFontSize(double size) {
