@@ -80,7 +80,7 @@ class _BarcodeExampleState extends State<BarcodeExampleSecond> {
             return PdfPreview(
               build: (format) => snapshot.data!,
               pageFormats: const <String, PdfPageFormat>{
-                'Roll80': PdfPageFormat.roll80,
+                'Roll70x10': PdfPageFormat.roll70x10,
               },
             );
           } else {

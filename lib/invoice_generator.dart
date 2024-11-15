@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:invoice_generator/enums/template_type.dart';
 import 'package:invoice_generator/models/barcode_model.dart';
 import 'package:invoice_generator/models/email_model.dart';
-import 'package:invoice_generator/models/fnb_invoice_model.dart';
 import 'package:invoice_generator/models/pdf_settings.dart';
 import 'package:invoice_generator/templates/barcode_template/barcode_template_second.dart';
 import 'package:invoice_generator/templates/email_template/email_template.dart';
