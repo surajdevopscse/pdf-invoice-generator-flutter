@@ -100,7 +100,8 @@ class PrintGenerator {
       throw Exception('Barcode should be in EAN13 format');
     }
 
-    final pdf = await BarcodeTemplateSecond(data: data).getBarcodePdf();
+    final pdf =
+        await BarcodeTemplateSecond(data: [data, data, data]).getBarcodePdf();
     return pdf.save();
   }
 

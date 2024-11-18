@@ -4,7 +4,7 @@ import 'package:printing/printing.dart';
 import '../../models/barcode_model.dart';
 
 class BarcodeTemplateSecond {
-  final BarcodeModel data;
+  final List<BarcodeModel> data;
   BarcodeTemplateSecond({required this.data});
 
   /// FONTS
@@ -26,25 +26,38 @@ class BarcodeTemplateSecond {
   }
 
   Future<Document> getBarcodePdf() async {
-    await setFontFamily(data.fontFamily);
-
     final barcode = Document();
-    barcode.addPage(
-      Page(
-        pageFormat: const PdfPageFormat(
-          17 * PdfPageFormat.mm,
-          10 * PdfPageFormat.mm,
+    for (var item in data) {
+      await setFontFamily(item.fontFamily);
+      barcode.addPage(
+        Page(
+          pageFormat: const PdfPageFormat(
+            17 * PdfPageFormat.mm,
+            10 * PdfPageFormat.mm,
+          ),
+          margin: EdgeInsets.zero,
+          build: (context) {
+            return barcodeView(item);
+          },
         ),
-        margin: EdgeInsets.zero,
-        build: (context) {
-          return barcodeView();
-        },
-      ),
-    );
+      );
+    }
+    // barcode.addPage(
+    //   Page(
+    //     pageFormat: const PdfPageFormat(
+    //       17 * PdfPageFormat.mm,
+    //       10 * PdfPageFormat.mm,
+    //     ),
+    //     margin: EdgeInsets.zero,
+    //     build: (context) {
+    //       return barcodeView();
+    //     },
+    //   ),
+    // );
     return barcode;
   }
 
-  Widget barcodeView() {
+  Widget barcodeView(BarcodeModel data) {
     return SizedBox(
       width: 17 * PdfPageFormat.mm,
       height: 10 * PdfPageFormat.mm,
