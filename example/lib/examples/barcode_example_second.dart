@@ -16,17 +16,18 @@ class BarcodeExampleSecond extends StatefulWidget {
 
 class _BarcodeExampleState extends State<BarcodeExampleSecond> {
   var isThermalViewType = false;
-
-  final BarcodeModel barcodeModel = BarcodeModel(
-    barCode: '590123412345',
-    itemName: "Gold Necklace", // Name of the item
-    itemCode: "C16-24", // Unique item code
-    goldPurity: "22K", // Purity of gold, e.g., "22K"
-    weight: "15g",
-    price: '20,989',
-    phone: '',
-    showNumber: true,
-  );
+  List<BarcodeModel> barcodeModel = [
+    BarcodeModel(
+      barCode: '590123412345',
+      itemName: "Gold Necklace", // Name of the item
+      itemCode: "C16-24", // Unique item code
+      goldPurity: "22K", // Purity of gold, e.g., "22K"
+      weight: "15g",
+      price: '20,989',
+      phone: '',
+      showNumber: true,
+    )
+  ];
 
   @override
   void initState() {
