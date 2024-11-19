@@ -16,18 +16,16 @@ class BarcodeExampleSecond extends StatefulWidget {
 
 class _BarcodeExampleState extends State<BarcodeExampleSecond> {
   var isThermalViewType = false;
-  List<BarcodeModel> barcodeModel = [
-    BarcodeModel(
-      barCode: '590123412345',
-      itemName: "Gold Necklace", // Name of the item
-      itemCode: "C16-24", // Unique item code
-      goldPurity: "22K", // Purity of gold, e.g., "22K"
-      weight: "15g",
-      price: '20,989',
-      phone: '',
-      showNumber: true,
-    )
-  ];
+  BarcodeModel barcodeModel = BarcodeModel(
+    barCode: '590123412345',
+    itemName: "Gold Necklace", // Name of the item
+    itemCode: "C16-24", // Unique item code
+    goldPurity: "22K", // Purity of gold, e.g., "22K"
+    weight: "15g",
+    price: '20,989',
+    phone: '',
+    showNumber: true,
+  );
 
   @override
   void initState() {
@@ -81,7 +79,10 @@ class _BarcodeExampleState extends State<BarcodeExampleSecond> {
             return PdfPreview(
               build: (format) => snapshot.data!,
               pageFormats: const <String, PdfPageFormat>{
-                'Roll70x10': PdfPageFormat.roll70x10,
+                'Roll70x10': PdfPageFormat(
+                  17 * PdfPageFormat.mm,
+                  10 * PdfPageFormat.mm,
+                ),
               },
             );
           } else {

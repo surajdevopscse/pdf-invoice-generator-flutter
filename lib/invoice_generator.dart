@@ -95,11 +95,7 @@ class PrintGenerator {
     return pdf.save();
   }
 
-  Future<Uint8List> generateEBarcodeSecond(List<BarcodeModel> data) async {
-    if (!Barcode.ean13().isValid(data.first.barCode)) {
-      throw Exception('Barcode should be in EAN13 format');
-    }
-
+  Future<Uint8List> generateEBarcodeSecond(BarcodeModel data) async {
     final pdf = await BarcodeTemplateSecond(data: data).getBarcodePdf();
     return pdf.save();
   }
